@@ -96,6 +96,7 @@ namespace FileApi.Service
         {
             try
             {
+                cancellation.ThrowIfCancellationRequested();
                 return await func();
             }
             catch (PathTooLongException e)
